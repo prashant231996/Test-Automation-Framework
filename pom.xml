@@ -5,8 +5,8 @@
   <version>0.0.1-SNAPSHOT</version>
   <name>Automation-Assignment</name>
     <properties>
-		<maven.compiler.source>1.8</maven.compiler.source>
-		<maven.compiler.target>1.8</maven.compiler.target>
+		<maven.compiler.source>11</maven.compiler.source>
+		<maven.compiler.target>11</maven.compiler.target>
 	</properties>
 	
 	<dependencies>
@@ -15,16 +15,17 @@
             <artifactId>selenium-java</artifactId>
             <version>4.35.0</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi</artifactId>
+            <version>5.3.0</version>
+        </dependency>
 		<dependency>
 			<groupId>org.apache.poi</groupId>
 			<artifactId>poi-ooxml</artifactId>
-			<version>3.9</version>
+			<version>5.3.0</version>
 		</dependency>
-		<dependency>
-			<groupId>commons-io</groupId>
-			<artifactId>commons-io</artifactId>
-			<version>2.6</version>
-		</dependency>	
 	<!-- https://mvnrepository.com/artifact/org.apache.directory.studio/org.apache.commons.io -->
 <dependency>
     <groupId>org.apache.directory.studio</groupId>
@@ -36,7 +37,7 @@
 <dependency>
     <groupId>org.testng</groupId>
     <artifactId>testng</artifactId>
-    <version>7.3.0</version>
+    <version>7.10.2</version>
     <scope>test</scope>
 </dependency>
 	
@@ -76,9 +77,45 @@
     <version>5.5.1</version>
 </dependency>
 
-	
-	
-	</dependencies>
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.13.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.opencsv</groupId>
+            <artifactId>opencsv</artifactId>
+            <version>5.12.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>2.24.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+            <version>2.24.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.aventstack</groupId>
+            <artifactId>extentreports</artifactId>
+            <version>5.1.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.2</version>
+            <scope>provided</scope>
+        </dependency>
+
+
+    </dependencies>
 	
 	 <build>
   <plugins>
@@ -86,12 +123,17 @@
   <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-plugin</artifactId>
-        <version>3.0.0-M5</version>
-        <!-- configuration>
+        <version>3.5.1</version>
+        <configuration>
+            <systemPropertyVariables>
+                <browser>chrome</browser>
+                <isLambdaTest>true</isLambdaTest>
+                <isHeadless>true</isHeadless>
+            </systemPropertyVariables>
           <suiteXmlFiles>
-            <suiteXmlFile>F:\selenium\usermng_sys\src\test\resources\TestDemp.xml</suiteXmlFile>
+            <suiteXmlFile>testng.xml</suiteXmlFile>
           </suiteXmlFiles>
-        </configuration-->
+        </configuration>
       </plugin>  
    <plugin>
         <groupId>org.apache.maven.plugins</groupId>
