@@ -24,6 +24,8 @@ public class TestListner implements ITestListener {
     ExtentTest extentTest;   //Store information about test
 
     public void onTestStart(ITestResult result) {
+        logger.info("Test case is started");
+        System.out.println("test case name  "+result.getMethod().getMethodName());
         logger.info(result.getMethod().getMethodName());
         logger.info(result.getMethod().getDescription());
         logger.info(Arrays.toString(result.getMethod().getGroups()));
