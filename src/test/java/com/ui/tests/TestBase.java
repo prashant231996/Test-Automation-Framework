@@ -19,7 +19,7 @@ import static com.constants.Browser.EDGE;
 public class TestBase {
 
     protected HomePage homePage;
-    private boolean isLambdaTest=true;
+    private boolean isLambdaTest;
     Logger logger= LoggerUtility.getLogger(this.getClass());
     @Parameters({"browser","isLambdaTest","isHeadless"})
     @BeforeMethod(description = "Load home page of the website")

@@ -151,7 +151,7 @@ public abstract class BrowserUtility {
         Date date=new Date();
         SimpleDateFormat simpleDateFormat=new SimpleDateFormat("HH-mm-ss");
         String timeStamp=simpleDateFormat.format(date);
-        String destFilePath=System.getProperty("user.dir")+"\\snapshots\\"+fileName+" - "+timeStamp+".png";
+        String destFilePath="./snapshots/"+fileName+" - "+timeStamp+".png";
         File destFile=new File(destFilePath);
         TakesScreenshot ts=(TakesScreenshot) driver.get();
         File srcFile=ts.getScreenshotAs(OutputType.FILE);

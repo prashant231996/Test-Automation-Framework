@@ -13,7 +13,7 @@ public class ExtentReportUtility {
     {
         ExtentSparkReporter extentSparkReporter=null;
         try {
-            extentSparkReporter = new ExtentSparkReporter(System.getProperty("user.dir") + "\\" + reportName);
+            extentSparkReporter = new ExtentSparkReporter(System.getProperty("user.dir") + "//" + reportName);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
