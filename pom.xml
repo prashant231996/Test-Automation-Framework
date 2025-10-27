@@ -7,9 +7,6 @@
     <properties>
 		<maven.compiler.source>11</maven.compiler.source>
 		<maven.compiler.target>11</maven.compiler.target>
-        <browser>${browser}</browser>
-        <isLambdaTest>${isLambdaTest}</isLambdaTest>
-        <isHeadless>${isHeadless}</isHeadless>
 	</properties>
 	
 	<dependencies>
@@ -129,8 +126,11 @@
         <version>3.5.1</version>
         <configuration>
             <systemPropertyVariables>
+                <!--suppress UnresolvedMavenProperty -->
                 <browser>${browser}</browser>
+                <!--suppress UnresolvedMavenProperty -->
                 <isLambdaTest>${isLambdaTest}</isLambdaTest>
+                <!--suppress UnresolvedMavenProperty -->
                 <isHeadless>${isHeadless}</isHeadless>
             </systemPropertyVariables>
           <suiteXmlFiles>
