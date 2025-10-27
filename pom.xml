@@ -127,11 +127,11 @@
         <configuration>
             <systemPropertyVariables>
                 <!--suppress UnresolvedMavenProperty -->
-                <browser>${browser}</browser>
+                <browser>chrome</browser>
                 <!--suppress UnresolvedMavenProperty -->
-                <isLambdaTest>${isLambdaTest}</isLambdaTest>
+                <isLambdaTest>true</isLambdaTest>
                 <!--suppress UnresolvedMavenProperty -->
-                <isHeadless>${isHeadless}</isHeadless>
+                <isHeadless>true</isHeadless>
             </systemPropertyVariables>
           <suiteXmlFiles>
             <suiteXmlFile>testng.xml</suiteXmlFile>
