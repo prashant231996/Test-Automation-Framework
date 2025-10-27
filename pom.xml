@@ -126,11 +126,8 @@
         <version>3.5.1</version>
         <configuration>
             <systemPropertyVariables>
-                <!--suppress UnresolvedMavenProperty -->
                 <browser>chrome</browser>
-                <!--suppress UnresolvedMavenProperty -->
                 <isLambdaTest>true</isLambdaTest>
-                <!--suppress UnresolvedMavenProperty -->
                 <isHeadless>true</isHeadless>
             </systemPropertyVariables>
           <suiteXmlFiles>
