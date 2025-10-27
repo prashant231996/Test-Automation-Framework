@@ -4,6 +4,8 @@ import com.constants.Browser;
 import com.ui.pages.HomePage;
 import com.utility.BrowserUtility;
 import com.utility.LambdaTestUtility;
+import com.utility.LoggerUtility;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
@@ -18,7 +20,7 @@ public class TestBase {
 
     protected HomePage homePage;
     private boolean isLambdaTest;
-
+    Logger logger= LoggerUtility.getLogger(this.getClass());
     @Parameters({"browser","isLambdaTest","isHeadless"})
     @BeforeMethod(description = "Load home page of the website")
     public void setUp(
@@ -26,10 +28,16 @@ public class TestBase {
             @Optional("false") boolean isLambdaTest,
             @Optional("true") boolean isHeadless, ITestResult result)
     {
+        logger.info("Inside Before Method implementation");
         WebDriver lambdaDriver=null;
         this.isLambdaTest=isLambdaTest;
+        System.out.println("isLambdaTest "+isLambdaTest);
+        System.out.println("browser "+browser);
+        System.out.println("isHeadless "+isHeadless);
+        System.out.println("test case name  "+result.getMethod().getMethodName());
         if(isLambdaTest)
         {
+            logger.info("Inside lambda test intialization");
             lambdaDriver=LambdaTestUtility.initializeLamdaTestSession(browser,result.getMethod().getMethodName());
             homePage=new HomePage(lambdaDriver);
         }
