@@ -19,18 +19,17 @@ import static com.constants.Browser.EDGE;
 public class TestBase {
 
     protected HomePage homePage;
-    private boolean isLambdaTest;
+    private boolean isLambdaTest=true;
+    private String browser="chrome";
+    private boolean isHeadless=true;
     Logger logger= LoggerUtility.getLogger(this.getClass());
-    @Parameters({"browser","isLambdaTest","isHeadless"})
+    //@Parameters({"browser","isLambdaTest","isHeadless"})
     @BeforeMethod(description = "Load home page of the website")
-    public void setUp(
-            @Optional("chrome") String browser,
-            @Optional("false") boolean isLambdaTest,
-            @Optional("true") boolean isHeadless, ITestResult result)
+    public void setUp(ITestResult result)
     {
         logger.info("Inside Before Method implementation");
         WebDriver lambdaDriver=null;
-        this.isLambdaTest=isLambdaTest;
+        //this.isLambdaTest=isLambdaTest;
         System.out.println("isLambdaTest "+isLambdaTest);
         System.out.println("browser "+browser);
         System.out.println("isHeadless "+isHeadless);
