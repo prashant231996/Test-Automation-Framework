@@ -125,11 +125,11 @@
         <artifactId>maven-surefire-plugin</artifactId>
         <version>3.5.1</version>
         <configuration>
-            <systemPropertyVariables>
+            <!--<systemPropertyVariables>
                 <browser>chrome</browser>
                 <isLambdaTest>true</isLambdaTest>
                 <isHeadless>true</isHeadless>
-            </systemPropertyVariables>
+            </systemPropertyVariables>-->
           <suiteXmlFiles>
             <suiteXmlFile>testng.xml</suiteXmlFile>
           </suiteXmlFiles>
