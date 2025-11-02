@@ -12,6 +12,8 @@ public final class LoginPage extends BrowserUtility {
 
     private static final By SIGN_IN_BUTTON=By.id("SubmitLogin");
 
+    private static final By ERROR_MSG_LOCATOR=By.xpath("//div[contains(@class,'alert-danger')]//li");
+
     public LoginPage(WebDriver driver) {
         super(driver);
     }
@@ -23,5 +25,19 @@ public final class LoginPage extends BrowserUtility {
          clickOn(SIGN_IN_BUTTON);
          return new MyAccountPage(getDriver());
     }
+
+    public LoginPage doLoginWithInvalidCreds(String emailAddress,String passwrod)
+    {
+        type(EMIAL_TEXT_LOCATOR,emailAddress);
+        type(PASSWORD_TEXT_LOCATOR,passwrod);
+        clickOn(SIGN_IN_BUTTON);
+        return new LoginPage(getDriver());
+    }
+
+    public String getErroMessage()
+    {
+        return getVisibleText(ERROR_MSG_LOCATOR);
+    }
+
 }
 

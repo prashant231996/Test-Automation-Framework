@@ -23,17 +23,13 @@ public class TestBase {
     Logger logger= LoggerUtility.getLogger(this.getClass());
     @Parameters({"browser","isLambdaTest","isHeadless"})
     @BeforeMethod(description = "Load home page of the website")
-    public void setUp( @Optional("chrome") String browser,
+    public void setUp( @Optional("edge") String browser,
                        @Optional("false") boolean isLambdaTest,
-                       @Optional("true") boolean isHeadless,ITestResult result)
+                       @Optional("false") boolean isHeadless,ITestResult result)
     {
         logger.info("Inside Before Method implementation");
         WebDriver lambdaDriver=null;
         this.isLambdaTest=isLambdaTest;
-        System.out.println("isLambdaTest "+isLambdaTest);
-        System.out.println("browser "+browser);
-        System.out.println("isHeadless "+isHeadless);
-        System.out.println("test case name  "+result.getMethod().getMethodName());
         if(isLambdaTest)
         {
             logger.info("Inside lambda test intialization");

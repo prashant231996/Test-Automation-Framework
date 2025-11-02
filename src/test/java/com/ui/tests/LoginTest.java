@@ -3,15 +3,12 @@ package com.ui.tests;
 import com.dataproviders.LoginDataProvider;
 import com.ui.listners.MyRetryAnalyzer;
 import com.ui.listners.TestListner;
-import com.ui.pages.HomePage;
 import com.ui.pojo.User;
 import com.utility.LoggerUtility;
 import org.apache.logging.log4j.Logger;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
-import static com.constants.Browser.EDGE;
 import static org.testng.Assert.assertEquals;
 
 @Listeners({TestListner.class})
@@ -20,7 +17,7 @@ public class LoginTest extends TestBase{
     Logger logger= LoggerUtility.getLogger(this.getClass());
 
     @Test(description = "Verify valid user is able to login", groups = {"e2e","sanity"},dataProviderClass = LoginDataProvider.class,dataProvider = "LoginTestData")
-    public  void loginMethod(User user)
+    public  void loginJsonMethod(User user)
     {
         assertEquals(homePage.goToLoginPage().doLoginWith(user.getEmailAdresss(), user.getPassword()).getUsername(),"Prashanttest More");
     }
