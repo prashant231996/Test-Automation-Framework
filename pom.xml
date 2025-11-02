@@ -139,7 +139,7 @@
                 <isHeadless>${isHeadless}</isHeadless>
             </systemPropertyVariables>
           <suiteXmlFiles>
-            <suiteXmlFile>testng.xml</suiteXmlFile>
+            <suiteXmlFile>E2Etestng.xml</suiteXmlFile>
           </suiteXmlFiles>
         </configuration>
       </plugin>
