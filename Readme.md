@@ -95,8 +95,8 @@ The framework supports three parameters:
 - browser	Browser to run tests on	chrome, firefox, edge, etc.
 - isLambdaTest	Run tests on LambdaTest	true / false
 - isHeadless	Run tests in headless mode	true / false
+  
 ▶️ Example Commands
-
 1️⃣ Run Tests Locally (Headless Mode)
 mvn clean test -Dbrowser=chrome -DisLambdaTest=false -DisHeadless=true
 
@@ -116,3 +116,4 @@ mvn clean test -Dbrowser=edge -DisLambdaTest=true -DisHeadless=false
 ## Integration the project Githiub Actions
 This automation framework is integrated with github actions. 
 The test will be executed at 11:30PM IST every single day.
+
